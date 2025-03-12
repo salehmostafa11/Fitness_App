@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FitnessApp.Core.Domain.Models
 {
-    public class Nutrition_Plan
+    public class NutritionPlan
     {
-        [Key]
+
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string Calories { get; set; }
-        [Required]
         public string Meals { get; set; }
+        public int NutritionistId { get; set; }
+        public Nutritionist nutritionist { get; set; }
+        public int LevelId { get; set; }
+        public Level level { get; set; }
     }
 }

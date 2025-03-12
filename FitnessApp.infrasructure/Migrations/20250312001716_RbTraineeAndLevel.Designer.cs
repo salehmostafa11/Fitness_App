@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitnessApp.infrasructure.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250217221811_first")]
-    partial class first
+    [Migration("20250312001716_RbTraineeAndLevel")]
+    partial class RbTraineeAndLevel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,15 +33,6 @@ namespace FitnessApp.infrasructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("nvarchar(13)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -53,10 +44,6 @@ namespace FitnessApp.infrasructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Admins");
-
-                    b.HasDiscriminator().HasValue("Admin");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("FitnessApp.Core.Domain.Models.Level", b =>
@@ -71,7 +58,7 @@ namespace FitnessApp.infrasructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("steps")
+                    b.Property<int>("Steps")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -79,7 +66,7 @@ namespace FitnessApp.infrasructure.Migrations
                     b.ToTable("Levels");
                 });
 
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Nutrition_Plan", b =>
+            modelBuilder.Entity("FitnessApp.Core.Domain.Models.NutritionPlan", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,7 +91,7 @@ namespace FitnessApp.infrasructure.Migrations
                     b.ToTable("NutritionPlans");
                 });
 
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.User", b =>
+            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Nutritionist", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -112,10 +99,33 @@ namespace FitnessApp.infrasructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Discriminator")
+                    b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Nutritionists");
+                });
+
+            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Trainee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -124,12 +134,11 @@ namespace FitnessApp.infrasructure.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Height")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("LevelId")
                         .HasColumnType("int");
-
-                    b.Property<string>("LevelName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -139,16 +148,54 @@ namespace FitnessApp.infrasructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Steps")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TrainerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TypeOfTraining")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Weight")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.HasIndex("LevelId");
 
-                    b.HasDiscriminator().HasValue("User");
+                    b.HasIndex("TrainerId");
 
-                    b.UseTphMappingStrategy();
+                    b.ToTable("Trainees");
                 });
 
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.WorkoutVideo", b =>
+            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Trainer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Trainers");
+                });
+
+            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Video", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -159,9 +206,6 @@ namespace FitnessApp.infrasructure.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("LevelId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Link")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -170,88 +214,36 @@ namespace FitnessApp.infrasructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("level_Id")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("LevelId");
 
                     b.ToTable("Videos");
                 });
 
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Supervisor", b =>
-                {
-                    b.HasBaseType("FitnessApp.Core.Domain.Models.Admin");
-
-                    b.Property<int>("Experience_Years")
-                        .HasColumnType("int");
-
-                    b.HasDiscriminator().HasValue("Supervisor");
-                });
-
             modelBuilder.Entity("FitnessApp.Core.Domain.Models.Trainee", b =>
                 {
-                    b.HasBaseType("FitnessApp.Core.Domain.Models.User");
-
-                    b.Property<decimal>("Height")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Steps")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SupervisorId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Type_of_Training")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Weight")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("age")
-                        .HasColumnType("int");
-
-                    b.HasIndex("SupervisorId");
-
-                    b.HasDiscriminator().HasValue("Trainee");
-                });
-
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Nutritionist", b =>
-                {
-                    b.HasBaseType("FitnessApp.Core.Domain.Models.Supervisor");
-
-                    b.HasDiscriminator().HasValue("Nutritionist");
-                });
-
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Trainer", b =>
-                {
-                    b.HasBaseType("FitnessApp.Core.Domain.Models.Supervisor");
-
-                    b.HasDiscriminator().HasValue("Trainer");
-                });
-
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.WorkoutVideo", b =>
-                {
-                    b.HasOne("FitnessApp.Core.Domain.Models.Level", null)
-                        .WithMany("workoutVideos")
-                        .HasForeignKey("LevelId");
-                });
-
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Trainee", b =>
-                {
-                    b.HasOne("FitnessApp.Core.Domain.Models.Supervisor", null)
+                    b.HasOne("FitnessApp.Core.Domain.Models.Level", "level")
                         .WithMany("trainees")
-                        .HasForeignKey("SupervisorId");
+                        .HasForeignKey("LevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FitnessApp.Core.Domain.Models.Trainer", "trainer")
+                        .WithMany("trainees")
+                        .HasForeignKey("TrainerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("level");
+
+                    b.Navigation("trainer");
                 });
 
             modelBuilder.Entity("FitnessApp.Core.Domain.Models.Level", b =>
                 {
-                    b.Navigation("workoutVideos");
+                    b.Navigation("trainees");
                 });
 
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Supervisor", b =>
+            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Trainer", b =>
                 {
                     b.Navigation("trainees");
                 });

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp\\FitnessApp.UI.csproj": {}
+    "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp\\FitnessApp.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj": {
+    "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj",
         "projectName": "FitnessApp.Core",
-        "projectPath": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj",
-        "packagesPath": "C:\\Users\\Hanaa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.Core\\obj\\",
+        "projectPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj",
+        "packagesPath": "C:\\Users\\Saleh Mostafa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hanaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Saleh Mostafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -71,24 +71,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj": {
+    "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj",
+        "projectUniqueName": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj",
         "projectName": "FitnessApp.infrasructure",
-        "projectPath": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj",
-        "packagesPath": "C:\\Users\\Hanaa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.infrasructure\\obj\\",
+        "projectPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj",
+        "packagesPath": "C:\\Users\\Saleh Mostafa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.infrasructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hanaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Saleh Mostafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -103,8 +103,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj": {
-                "projectPath": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj"
+              "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj": {
+                "projectPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj"
               }
             }
           }
@@ -156,24 +156,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp\\FitnessApp.UI.csproj": {
+    "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp\\FitnessApp.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp\\FitnessApp.UI.csproj",
+        "projectUniqueName": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp\\FitnessApp.UI.csproj",
         "projectName": "FitnessApp.UI",
-        "projectPath": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp\\FitnessApp.UI.csproj",
-        "packagesPath": "C:\\Users\\Hanaa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp\\obj\\",
+        "projectPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp\\FitnessApp.UI.csproj",
+        "packagesPath": "C:\\Users\\Saleh Mostafa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hanaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Saleh Mostafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -188,11 +188,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj": {
-                "projectPath": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj"
+              "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj": {
+                "projectPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.Core\\FitnessApp.Core.csproj"
               },
-              "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj": {
-                "projectPath": "C:\\Users\\Hanaa\\source\\repos\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj"
+              "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj": {
+                "projectPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ddd\\FitnessApp\\FitnessApp.infrasructure\\FitnessApp.infrasructure.csproj"
               }
             }
           }
@@ -243,7 +243,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

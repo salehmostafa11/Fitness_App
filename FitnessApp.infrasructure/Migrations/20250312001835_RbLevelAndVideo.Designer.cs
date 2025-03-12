@@ -4,6 +4,7 @@ using FitnessApp.infrasructure.DBContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitnessApp.infrasructure.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250312001835_RbLevelAndVideo")]
+    partial class RbLevelAndVideo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,9 +78,6 @@ namespace FitnessApp.infrasructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LevelId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Meals")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -86,14 +86,7 @@ namespace FitnessApp.infrasructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NutritionistId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("LevelId");
-
-                    b.HasIndex("NutritionistId");
 
                     b.ToTable("NutritionPlans");
                 });
@@ -110,9 +103,6 @@ namespace FitnessApp.infrasructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LevelId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -122,8 +112,6 @@ namespace FitnessApp.infrasructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("LevelId");
 
                     b.ToTable("Nutritionists");
                 });
@@ -236,36 +224,6 @@ namespace FitnessApp.infrasructure.Migrations
                     b.ToTable("Videos");
                 });
 
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.NutritionPlan", b =>
-                {
-                    b.HasOne("FitnessApp.Core.Domain.Models.Level", "level")
-                        .WithMany("nutritionPlans")
-                        .HasForeignKey("LevelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FitnessApp.Core.Domain.Models.Nutritionist", "nutritionist")
-                        .WithMany("nutritionPlans")
-                        .HasForeignKey("NutritionistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("level");
-
-                    b.Navigation("nutritionist");
-                });
-
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Nutritionist", b =>
-                {
-                    b.HasOne("FitnessApp.Core.Domain.Models.Level", "level")
-                        .WithMany("nutritionists")
-                        .HasForeignKey("LevelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("level");
-                });
-
             modelBuilder.Entity("FitnessApp.Core.Domain.Models.Trainee", b =>
                 {
                     b.HasOne("FitnessApp.Core.Domain.Models.Level", "level")
@@ -298,18 +256,9 @@ namespace FitnessApp.infrasructure.Migrations
 
             modelBuilder.Entity("FitnessApp.Core.Domain.Models.Level", b =>
                 {
-                    b.Navigation("nutritionPlans");
-
-                    b.Navigation("nutritionists");
-
                     b.Navigation("trainees");
 
                     b.Navigation("videos");
-                });
-
-            modelBuilder.Entity("FitnessApp.Core.Domain.Models.Nutritionist", b =>
-                {
-                    b.Navigation("nutritionPlans");
                 });
 
             modelBuilder.Entity("FitnessApp.Core.Domain.Models.Trainer", b =>

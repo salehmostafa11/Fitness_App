@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace FitnessApp.Core.Domain.Models
 {
-    public class Trainer:Supervisor
+    public class Trainer
     {
+
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public List<Trainee> trainees { get; set; }
     }
 }
